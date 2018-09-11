@@ -18,76 +18,58 @@
 <% j = 0 %> 
 <% @cars.each do |car| %>
   <% if @current_cars_parked.include?(car.id) == false %>
-  <% j+=1 %>
+    <% j+=1 %>
   <% end %>
 <% end %>
 
 <% if j > 0 %>
   <div class="field">
   <%= form.label :car_id %>
-  
     <select name="parking[car_id]" id="parking_car_id">
     <% i= 0 %>
-    
     <% @cars.each do |car| %>
-
-      <% if @current_cars_parked.include?(car.id) == false %>
-
-     
-        
-      <option value="<%=car.id%>"><%=Car.find(car.id).nickname%></option>
-      
-      
-      
-  
-      <% i+=1 %>
-     
-     
-    <%end%>
-    <%end%>
+      <% if @current_cars_parked.include?(car.id) == false %>   
+        <option value="<%=car.id%>"><%=Car.find(car.id).nickname%></option>
+        <% i+=1 %>
+      <%end%>
+  <%end%>
   </div>
 
-  <div class="field">
-
+<div class="field">
   <%= form.hidden_field :active, :value => true %>
 </div>
 
-
+<div class="field">
+  <%= form.text_field :address, :id => "address" %>
+</div>
 
 <div class="field">
+  <%= form.text_field :start_lat, :id => "start_lat" %>
+</div>
 
-  <%= form.text_field :address, :value => "90 John Street" %>
+<div class="field">
+  <%= form.text_field :end_lat, :id => "end_lat" %>
 </div>
 
 <div class="field">
 
-  <%= form.text_field :start_lat, :value => "0" %>
+  <%= form.text_field :start_long, :id => "start_long" %>
 </div>
 
 <div class="field">
-
-  <%= form.text_field :end_lat, :value => "0" %>
+  <%= form.text_field :end_long, :id => "end_long" %>
 </div>
 
 <div class="field">
-
-  <%= form.text_field :start_long, :value => "0" %>
+  <%= form.text_field :move_by, :id => "move_by" %>
 </div>
 
 <div class="field">
-
-  <%= form.text_field :end_long, :value => "0" %>
+  <%= form.text_field :remind_at, :value => "", :id => "remind-at" %>
 </div>
 
-<div class="field">
-
-  <%= form.text_field :move_by, :value => DateTime.now %>
-</div>
-
-<div class="field">
-
-  <%= form.text_field :remind_at, :value => DateTime.now %>
-</div>
+<div id="map_canvas"></div>
+<h1 id="display"></h1> 
   
 
   <div class="actions">
@@ -103,5 +85,10 @@
     
     <%end%>
   <% end %>
+
+  <script>
+    mapDates(); 
+    getCoords(); 
+  </script>
  
 

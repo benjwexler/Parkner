@@ -61,7 +61,32 @@ class ParkingsController < ApplicationController
   # POST /parkings
   # POST /parkings.json
   def create
+    move_by_date_string = parking_params[:move_by] #<---move by parameter
+    move_by_datetime_object = DateTime.parse(move_by_date_string)
+
+    right_now_datetime_object = DateTime.now
+    
+    hours_until_move_by_date = (move_by_datetime_object - right_now_datetime_object) * 24.0
+
+    hours_until_reminder_30_mins_before = hours_until_move_by_date - 0.5
+
+    
+
     @parking = Parking.new(parking_params)
+    puts "----------------------"
+    puts "----------------------"
+    puts "----------------------"
+    puts "----------------------"
+    puts "HOURS UNTIL REMINDER"
+    puts hours_until_reminder_30_mins_before
+    puts "30 BEFORE"
+    puts (DateTime.parse(parking_params[:move_by]) - 30.minutes)
+    puts "----------------------"
+    puts "----------------------"
+    puts "----------------------"
+
+    @parking.update(remind_at: (DateTime.parse(parking_params[:move_by]) - 30.minutes))
+    
 
     respond_to do |format|
       if @parking.save
