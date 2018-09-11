@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parkner</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <h1> Parkner </h1>
+  <h4> Your Partner in Parking </h4>
+  <br>
+    <%= yield %>
+    <br>
+    <br>
+    <br>
+    <%= link_to 'Your Cars', cars_path %> |
+    <%= link_to 'Account Info', users_path %> |
+    <%= link_to 'Your Parking Sessions', parkings_path %> |
+    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'header-link' %>
+  </body>
+</html>

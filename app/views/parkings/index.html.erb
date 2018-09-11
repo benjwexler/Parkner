@@ -1,0 +1,56 @@
+<script>
+console.log("hi");
+</script>
+
+<h1>Your Parkings</h1>
+
+<% if @user_has_no_parkings == false %>
+
+<table>
+  <thead>
+    <tr>
+      
+      <th>Car</th>
+      <th>Address</th>
+      <th>Move By</th>
+      <th>Remind At</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <% @parkings.each do |parking| %>
+      <tr>
+      
+        <td><%= Car.find(parking.car_id).nickname %></td>
+        <td><%= parking.address %></td>
+        <td><%= parking.move_by %></td>
+        <td><%= parking.remind_at %></td>
+        <td><%= link_to 'Show', parking %></td>
+        <td><%= link_to 'Edit', edit_parking_path(parking) %></td>
+        <td><%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<% else %> 
+      <% if @user.cars == [] %>
+      <p>Looks like you don't have any cars registered. 
+<br>
+<br>
+Click <%= link_to 'Here', new_car_path %> to register your first car!</p>
+      <% else %>
+<p>Looks like you don't have any current parking sessions. 
+<br>
+<br>
+Click <%= link_to 'Here', new_parking_path %> to Parkner for the first time!</p>
+<% end %>
+<% end %>
+<br>
+<% if @user_has_no_parkings == false %>
+<%= link_to 'Create New Parking Session', new_parking_path %>
+<% end %>
+
+

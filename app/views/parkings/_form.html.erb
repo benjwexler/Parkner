@@ -1,0 +1,107 @@
+<%= form_with(model: parking, local: true) do |form| %>
+  <% if parking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(parking.errors.count, "error") %> prohibited this parking from being saved:</h2>
+
+      <ul>
+      <% parking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+
+  <%= form.hidden_field :user_id, :value => @current_user %>
+</div>
+<% j = 0 %> 
+<% @cars.each do |car| %>
+  <% if @current_cars_parked.include?(car.id) == false %>
+  <% j+=1 %>
+  <% end %>
+<% end %>
+
+<% if j > 0 %>
+  <div class="field">
+  <%= form.label :car_id %>
+  
+    <select name="parking[car_id]" id="parking_car_id">
+    <% i= 0 %>
+    
+    <% @cars.each do |car| %>
+
+      <% if @current_cars_parked.include?(car.id) == false %>
+
+     
+        
+      <option value="<%=car.id%>"><%=Car.find(car.id).nickname%></option>
+      
+      
+      
+  
+      <% i+=1 %>
+     
+     
+    <%end%>
+    <%end%>
+  </div>
+
+  <div class="field">
+
+  <%= form.hidden_field :active, :value => true %>
+</div>
+
+
+
+<div class="field">
+
+  <%= form.text_field :address, :value => "90 John Street" %>
+</div>
+
+<div class="field">
+
+  <%= form.text_field :start_lat, :value => "0" %>
+</div>
+
+<div class="field">
+
+  <%= form.text_field :end_lat, :value => "0" %>
+</div>
+
+<div class="field">
+
+  <%= form.text_field :start_long, :value => "0" %>
+</div>
+
+<div class="field">
+
+  <%= form.text_field :end_long, :value => "0" %>
+</div>
+
+<div class="field">
+
+  <%= form.text_field :move_by, :value => DateTime.now %>
+</div>
+
+<div class="field">
+
+  <%= form.text_field :remind_at, :value => DateTime.now %>
+</div>
+  
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+  
+   <% else %>
+    <p> Looks like all your cars are currently parked!
+    <br>
+    <br>
+      Click <%= link_to 'Here', parkings_path %> To see all your Parking Sessions
+    </p>
+    
+    <%end%>
+  <% end %>
+ 
+

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @parking.user_id %>
+</p>
+
+<p>
+  <strong>Car:</strong>
+  <%= Car.find(@parking.car_id).nickname %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @parking.address %>
+</p>
+
+<p>
+  <strong>Move By:</strong>
+  <%= @parking.move_by %>
+</p>
+
+<p>
+  <strong>Remind At:</strong>
+  <%= @parking.remind_at %>
+</p>
+
+<%= link_to 'Edit', edit_parking_path(@parking) %> |
+<%= link_to 'Back', parkings_path %>

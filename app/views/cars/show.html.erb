@@ -1,0 +1,16 @@
+
+
+<p>
+  <strong>Nickname:</strong>
+  <%= @car.nickname %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @car.description %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_car_path(@car) %> |
+<%= link_to 'Back', cars_path %>

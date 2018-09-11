@@ -1,0 +1,46 @@
+
+
+<p>
+  <strong>First name:</strong>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @user.phone_number %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+<p>
+  <strong>cars:</strong>
+  <% @cars.each do |car| %>
+    <%=car.nickname%>
+  <%end%>
+  
+ 
+</p>
+<p>
+  <strong>Parkings:</strong>
+  
+  <% @parkings.each do |session| %>
+    <%=session.user_id%>
+  <%end%>
+  
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Cars', cars_path %> |
+<%= link_to 'Back', users_path %>
