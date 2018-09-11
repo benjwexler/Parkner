@@ -92,7 +92,7 @@ class ParkingsController < ApplicationController
       puts "----------------------"
       puts "----------------------"
       puts "MOVE BY DATE"
-      puts move_by_datetime_object
+      puts  move_by_datetime_object
       puts "REMINDER SET FOR #{mins} MINS BEFORE MOVE BY DATE"
       puts (DateTime.parse(parking_params[:move_by]) - (mins.to_i).minutes)
       puts "HOURS UNTIL REMINDER"
@@ -103,7 +103,7 @@ class ParkingsController < ApplicationController
       @parking.update(remind_at: (DateTime.parse(parking_params[:move_by]) - (mins.to_i).minutes))
 
     else
-      @parking = Parking.new(parking_params)
+      @parking = Parking.new(parking_params.except(:minutes_before))
     end
 
 
