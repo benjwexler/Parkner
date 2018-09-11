@@ -18,7 +18,7 @@ class ParkingsController < ApplicationController
   # GET /parkings/1.json
   def show
     if Parking.exists?(params[:id].to_i) && Parking.find(params[:id].to_i).user_id == current_user.id
-      
+
     else
       redirect_to "/parkings"
     end 
@@ -61,32 +61,51 @@ class ParkingsController < ApplicationController
   # POST /parkings
   # POST /parkings.json
   def create
-    move_by_date_string = parking_params[:move_by] #<---move by parameter
-    move_by_datetime_object = DateTime.parse(move_by_date_string)
+  
+    if parking_params[:move_by].length > 0
 
-    right_now_datetime_object = DateTime.now
+      mins = parking_params[:minutes_before]
     
-    hours_until_move_by_date = (move_by_datetime_object - right_now_datetime_object) * 24.0
+      puts "----------------------"
+      puts "----------------------"
+      puts "----------------------"
+      puts "----------------------"
+      puts mins
+      puts parking_params.inspect
+      puts "----------------------"
+      puts "----------------------"
+      puts "----------------------"
+      puts "----------------------"
 
-    hours_until_reminder_30_mins_before = hours_until_move_by_date - 0.5
+      move_by_date_string = parking_params[:move_by] #<---move by parameter
+      move_by_datetime_object = DateTime.parse(move_by_date_string)
 
-    
+      right_now_datetime_object = DateTime.now
+      
+      hours_until_move_by_date = (move_by_datetime_object - right_now_datetime_object) * 24.0
 
-    @parking = Parking.new(parking_params)
-    puts "----------------------"
-    puts "----------------------"
-    puts "----------------------"
-    puts "----------------------"
-    puts "HOURS UNTIL REMINDER"
-    puts hours_until_reminder_30_mins_before
-    puts "30 BEFORE"
-    puts (DateTime.parse(parking_params[:move_by]) - 30.minutes)
-    puts "----------------------"
-    puts "----------------------"
-    puts "----------------------"
+      hours_until_reminder = hours_until_move_by_date - (mins.to_i/60)
 
-    @parking.update(remind_at: (DateTime.parse(parking_params[:move_by]) - 30.minutes))
-    
+      @parking = Parking.new(parking_params.except(:minutes_before))
+      puts "----------------------"
+      puts "----------------------"
+      puts "----------------------"
+      puts "----------------------"
+      puts "MOVE BY DATE"
+      puts move_by_datetime_object
+      puts "REMINDER SET FOR #{mins} MINS BEFORE MOVE BY DATE"
+      puts (DateTime.parse(parking_params[:move_by]) - (mins.to_i).minutes)
+      puts "HOURS UNTIL REMINDER"
+      puts hours_until_reminder
+      puts "----------------------"
+      puts "----------------------"
+      puts "----------------------"
+      @parking.update(remind_at: (DateTime.parse(parking_params[:move_by]) - (mins.to_i).minutes))
+
+    else
+      @parking = Parking.new(parking_params)
+    end
+
 
     respond_to do |format|
       if @parking.save
@@ -138,6 +157,6 @@ class ParkingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def parking_params
-      params.require(:parking).permit(:user_id, :car_id, :active, :address, :start_lat, :end_lat, :start_long, :end_long, :move_by, :remind_at )
+      params.require(:parking).permit(:user_id, :car_id, :active, :address, :start_lat, :end_lat, :start_long, :end_long, :move_by, :remind_at, :minutes_before)
     end
 end

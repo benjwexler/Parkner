@@ -13,7 +13,11 @@
 
 <p>
   <strong>Move By:</strong>
-  <span><%= @parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %></span>
+  <% if @parking.move_by  %>
+    <span><%= @parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %></span>
+  <% else %>
+    <span><%= %></span>
+  <% end %>
 </p>
 
 <p>
@@ -40,7 +44,11 @@
 <p>
 
   <strong>Remind At:</strong>
-  <%= @parking.remind_at.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %>
+  <% if @parking.move_by %>
+    <%= @parking.remind_at.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %>
+  <% else %>
+    <span><%= %></span>
+  <% end %>
 </p>
 
 <div id="map_canvas"></div>
