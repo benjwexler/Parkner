@@ -85,16 +85,15 @@ let meridianToMilitary = (time) => {
 let isNotCurrentlyPaid = (curbObj) => {
     let currentDay = (new Date()).getDay();
     let currentTimeAsSecs = militaryToSeconds(`${(new Date()).getHours()}:${(new Date()).getMinutes()}`);
-    let ans = false;
     for (let i = 0; i < curbObj.properties.rules.length; i++) {
         for (let o = 0; o < curbObj.properties.rules[i].times.length; o++) {
-            if ((curbObj.properties.rules[i].times[o].days.includes(currentDay) && (currentTimeAsSecs >= militaryToSeconds(curbObj.properties.rules[i].times[o].time_of_day_start) &&  currentTimeAsSecs <= militaryToSeconds(curbObj.properties.rules[i].times[o].time_of_day_end))) && curbObj.properties.rules[i].price[0].price_per_hour.amount === 0) {
-                console.log(curbObj.properties.rules[i].times[o]);
+            if ((curbObj.properties.rules[i].times[o].days.includes(currentDay) && (currentTimeAsSecs >= militaryToSeconds(curbObj.properties.rules[i].times[o].time_of_day_start) &&  currentTimeAsSecs <= militaryToSeconds(curbObj.properties.rules[i].times[o].time_of_day_end))) && curbObj.properties.rules[i].price[0].price_per_hour.amount === 0) { 
                 return true;
             }
         }
     }
-    return ans;
+    console.log("hi");
+    return false;
 }
 //------------------------------------------------------------
 
