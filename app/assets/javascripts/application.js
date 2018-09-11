@@ -92,7 +92,6 @@ let isNotCurrentlyPaid = (curbObj) => {
             }
         }
     }
-    console.log("hi");
     return false;
 }
 //------------------------------------------------------------
@@ -381,12 +380,13 @@ let getRulesFromCoords = () => {
                             moveByFinal.curbCoords = {start: {lat: response.data.features[x].geometry.coordinates[0][1], lng: response.data.features[x].geometry.coordinates[0][0]}, end: {lat: response.data.features[x].geometry.coordinates[1][1], lng: response.data.features[x].geometry.coordinates[1][0]}};
                             moveByFinal.profile = spansInWeek;
                         }
+                        parkData.backUp = {start: {lat: response.data.features[x].geometry.coordinates[0][1], lng: response.data.features[x].geometry.coordinates[0][0]}, end: {lat: response.data.features[x].geometry.coordinates[1][1], lng: response.data.features[x].geometry.coordinates[1][0]}};
                     }
                 }
                 console.log("-----------------------------------------------------");
                 console.log("-----------------------------------------------------");
 
-                
+                console.log(parkData);
                 if (moveByFinal !== undefined) {
                     let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
                     document.getElementById("display").innerText = `A car parked here must be moved by ${militaryToMeridian(moveByFinal.range.split("-")[1])} on ${retrieveDate(daysOfWeek.indexOf(moveByFinal.day)).toLocaleDateString("en-US", options)}`;
@@ -399,7 +399,7 @@ let getRulesFromCoords = () => {
                     
                     parkData.moveByDate = new Date(spDate.getFullYear(), spDate.getMonth(), spDate.getDate(), eval(milTime.split(":")[0]), eval(milTime.split(":")[1]), 0); 
 
-                    console.log(parkData);
+                    
 
                     //PLUG INTO FORM INPUT ELEMENTS HERE
                     //document.getElementById("park_session_loc_lat").value = (parkData.all.curbCoords.start.lat + parkData.all.curbCoords.end.lat)/2;
@@ -412,7 +412,15 @@ let getRulesFromCoords = () => {
                 }
                 else {
                     document.getElementById("display").innerText = "A car can stay here all week";
-                
+                    alert("You cant set a reminder for a car that can stay parked all week but you can store its location.")
+
+                    document.getElementById("submitPark").innerHTML = "Create Parking";
+
+
+                    document.getElementById("start_lat").value = parkData.backUp.start.lat;
+                    document.getElementById("end_lat").value = parkData.backUp.end.lat;
+                    document.getElementById("start_long").value = parkData.backUp.start.lng;
+                    document.getElementById("end_long").value = parkData.backUp.end.lng;
                 }
             });
             blockWhole.setMap(map);

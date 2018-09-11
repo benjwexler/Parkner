@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-
+<div class="field">
   <%= form.hidden_field :user_id, :value => @current_user %>
 </div>
+
 <% j = 0 %> 
 <% @cars.each do |car| %>
   <% if @current_cars_parked.include?(car.id) == false %>
@@ -31,9 +31,10 @@
       <% if @current_cars_parked.include?(car.id) == false %>   
         <option value="<%=car.id%>"><%=Car.find(car.id).nickname%></option>
         <% i+=1 %>
-      <%end%>
-  <%end%>
+      <% end %>
+   <%end%>
   </div>
+
 
 <div class="field">
   <%= form.hidden_field :active, :value => true %>
@@ -68,14 +69,29 @@
   <%= form.text_field :remind_at, :value => "", :id => "remind-at" %>
 </div>
 
+<div class="field">
+  <%= form.text_field :minutes_before, :value => "", :id => "remind-at" %>
+</div>
+
+<div class="field">
+  <%= form.label :minutes_before %>
+  <select name=parking[minutes_before]>
+      <option value = 15>15 mins</option>
+      <option value = 30>30 mins</option>
+      <option value = 45>45 mins</option>
+      <option value = 60>1 Hr</option>
+  </select>
+</div>
+
+
 <div id="map_canvas"></div>
 <h1 id="display"></h1> 
   
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-  
+<div class="actions">
+  <%= form.submit :id => "submitPark" %>
+</div>
+
    <% else %>
     <p> Looks like all your cars are currently parked!
     <br>

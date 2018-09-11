@@ -24,8 +24,13 @@ console.log("hi");
       <tr>
         <td><%= Car.find(parking.car_id).nickname %></td>
         <td><%= parking.address %></td>
-        <td><%=  parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %></td>
-        <td><%=  parking.remind_at.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %></td>
+        <% if parking.move_by %>
+          <td><%=  parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %></td>
+          <td><%=  parking.remind_at.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %></td>
+        <% else %>
+          <td><%=   %></td>
+          <td><%=   %></td>
+        <% end %>
         <td><%= link_to 'Show', parking %></td>
         <td><%= link_to 'Edit', edit_parking_path(parking) %></td>
         <td><%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
