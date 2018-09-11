@@ -6,4 +6,9 @@ class User < ApplicationRecord
     has_many :cars, dependent: :destroy
     has_many :parkings, dependent: :destroy
 
+    after_create :signup_email
+    def signup_email
+      EmailMailer.signup_email(self).deliver
+    end
+
 end

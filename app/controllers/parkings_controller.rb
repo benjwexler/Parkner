@@ -61,6 +61,8 @@ class ParkingsController < ApplicationController
   # POST /parkings
   # POST /parkings.json
   def create
+
+    @user = current_user
   
     if parking_params[:move_by].length > 0
 
@@ -109,6 +111,9 @@ class ParkingsController < ApplicationController
 
     respond_to do |format|
       if @parking.save
+
+        EmailMailer.parked_email(@user).deliver
+
         format.html { redirect_to @parking, notice: 'Parking was successfully created.' }
         format.json { render :show, status: :created, location: @parking }
       else
