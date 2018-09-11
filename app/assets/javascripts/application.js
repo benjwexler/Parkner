@@ -196,6 +196,7 @@ let findMoveByDatetime = (ruleObj, spe) => {
     }
     if (startKey === undefined) {
         alert("This spot is not currently available");
+        document.getElementById("submitPark").style.display = "";
         spe.setMap(null);
     }
 
@@ -319,6 +320,19 @@ let getRulesFromCoords = () => {
 
             //CREATE EVENT CLICK LISTENER FOR EACH LINE---------------------------------------------------------------------
             blockWhole.addListener("click", ()=>{
+                console.log("AAAAAHHHHHHHHH");
+                console.log("AAAAAHHHHHHHHH");
+                console.log("AAAAAHHHHHHHHH");
+                console.log("AAAAAHHHHHHHHH");
+                console.log(document.getElementById("submitPark").style.display);
+                if (document.getElementById("submitPark").style.display === "") {
+                    document.getElementById("submitPark").style.display = "initial";
+                }
+                console.log("AAAAAHHHHHHHHH");
+                console.log("AAAAAHHHHHHHHH");
+                console.log("AAAAAHHHHHHHHH");
+                console.log("AAAAAHHHHHHHHH");
+
                 let moveByFinal;
                 console.log("-----------------------------------------------------");
                 console.log("-----------------------------------------------------");
