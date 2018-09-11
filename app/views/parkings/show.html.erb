@@ -1,29 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @parking.user_id %>
-</p>
-
-<p>
   <strong>Car:</strong>
   <%= Car.find(@parking.car_id).nickname %>
 </p>
 
 <p>
-  <strong>Address:</strong>
-  <%= @parking.address %>
-</p>
-
-<p>
   <strong>Move By:</strong>
-  <%= @parking.move_by %>
+  <span><%= @parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %></span>
 </p>
 
 <p>
-  <strong>Remind At:</strong>
-  <%= @parking.remind_at %>
+  <strong>Start Lat:</strong>
+  <span id = "curbStartLat"><%= @parking.start_lat %></span>
 </p>
+
+<p>
+  <strong>Start Lng:</strong>
+  <span id = "curbStartLng"><%= @parking.start_long %></span>
+</p>
+
+<p>
+  <strong>End Lat:</strong>
+  <span id = "curbEndLat"><%= @parking.end_lat %></span>
+</p>
+
+<p>
+  <strong>End Lng:</strong>
+  <span id = "curbEndLng"><%= @parking.end_long %></span>
+</p>
+
+
+<p>
+
+  <strong>Remind At:</strong>
+  <%= @parking.remind_at.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %>
+</p>
+
+<div id="map_canvas"></div>
+
+<script>
+  renderOldMap();
+</script>
 
 <%= link_to 'Edit', edit_parking_path(@parking) %> |
 <%= link_to 'Back', parkings_path %>
