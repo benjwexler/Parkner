@@ -1,9 +1,17 @@
 <% if user_signed_in? %>
-    <li class="nav-item"> 
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
-    </li>       
+    <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <%= @user.first_name %>
+        </a>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <%= link_to 'Account', @user, :class => "dropdown-item"%>
+            <div class="dropdown-divider"></div>
+            <%= link_to('Logout', destroy_user_session_path, :class => "dropdown-item", method: :delete) %> 
+        </div>
+    </div>
 <% else %>
-    <li>
+    <li class="nav-item">
         <%= link_to 'Sign Up', new_user_registration_path %>  
     </li>
     <li> 
