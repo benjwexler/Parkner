@@ -78,6 +78,8 @@ class ParkingsController < ApplicationController
 
       hours_until_reminder = hours_until_move_by_date - (mins.to_i/60)
 
+
+
       @parking = Parking.new(parking_params.except(:minutes_before))
       puts "----------------------"
       puts "----------------------"
@@ -102,7 +104,10 @@ class ParkingsController < ApplicationController
     respond_to do |format|
       if @parking.save
 
+     
+
         EmailMailer.parked_email(@user).deliver
+        EmailMailer.reminder_email(@user).deliver_later(wait: hours_until_reminder.hours)
 
         format.html { redirect_to @parking, notice: 'Parking was successfully created.' }
         format.json { render :show, status: :created, location: @parking }
