@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -13,18 +14,18 @@
   </head>
 
   <body>
-  <nav id="landing-nav" class="navbar navbar-light">
-  <a class="navbar-brand" href="/">
-  <%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span>
+    <nav id="landing-nav" class="navbar navbar-light">
+      <a class="navbar-brand" href="#">
+      <%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span>
 
-  
-  <ul class="nav justify-content-end">
-    <li class="nav-item">
-      
-      <li> <%= link_to 'Log Out', destroy_user_session_path %>
-    </li>
-  </ul>
-</nav>
+    
+      <ul class="nav justify-content-end">
+        <%= render 'devise/menu/login' %>
+      </ul>
+  </nav>
+
+
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
     <div class="container">
