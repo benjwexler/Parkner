@@ -16,6 +16,7 @@ class CarsController < ApplicationController
   # GET /cars/1
   # GET /cars/1.json
   def show
+    @car = Car.find(params[:id])
     if 
       Car.exists?(params[:id].to_i) && Car.find(params[:id].to_i).user_id == current_user.id
     else
