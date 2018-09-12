@@ -9,21 +9,16 @@
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type =>  'image/png' %>
   </head>
 
   <body>
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <h1> Parkner </h1>
-  <h4> Your Partner in Parking </h4>
+  
   <br>
     <%= yield %>
-    <br>
-    <br>
-    <br>
-    <%= link_to 'Your Cars', cars_path %> |
-    <%= link_to 'Account Info', users_path %> |
-    <%= link_to 'Your Parking Sessions', parkings_path %> |
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'header-link' %>
+    
+    
   </body>
 </html>
