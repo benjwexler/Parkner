@@ -117,7 +117,7 @@ class ParkingsController < ApplicationController
      
 
         EmailMailer.parked_email(@user).deliver
-        # EmailMailer.reminder_email(@user).deliver_later(wait: hours_until_reminder.hours)
+        EmailMailer.reminder_email(@user).deliver_later(wait: hours_until_reminder.hours)
 
         format.html { redirect_to @parking, notice: 'Parking was successfully created.' }
         format.json { render :show, status: :created, location: @parking }
