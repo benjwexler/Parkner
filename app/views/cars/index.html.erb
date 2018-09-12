@@ -1,39 +1,32 @@
+<div class="container">
+  <h1>Your Cars</h1>
 
-<h1>Your Cars</h1>
+  <% if @user_has_no_cars == false %>
 
-<% if @user_has_no_cars == false %>
+  <div id="cars-wrapper">
 
-<table>
-  <thead>
-    <tr>
-      <th>Nickname</th>
-      <th>Description</th>
+
+  <% @cars.each do |car| %>
+    <div>
+      <%= link_to car.nickname, car %>
+  
+    
+      <%= link_to 'Edit', edit_car_path(car) %>
       
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    </div>
+  <% end %>
+  </div>
 
-  <tbody>
-    <% @cars.each do |car| %>
-      <tr>
-        <td><%= link_to car.nickname, car %></td>
-        <td><%= car.description %></td>
-       
-        <td><%= link_to 'Edit', edit_car_path(car) %></td>
-        <td><%= link_to 'Destroy', car, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <% else %> 
+    <p>Looks like you don't have any cars registered. 
+    <br>
+    Click <%= link_to 'Here', new_car_path %> to register your first vehicle!</p>
+
     <% end %>
-  </tbody>
-</table>
+    <br>
+    <% if @user_has_no_cars == false %>
+    <%= link_to 'Add New Car', new_car_path %>
+  <% end %>
+</div>
 
-<% else %> 
-<p>Looks like you don't have any cars registered. 
-<br>
-Click <%= link_to 'Here', new_car_path %> to register your first vehicle!</p>
-
-<% end %>
-<br>
-<% if @user_has_no_cars == false %>
-<%= link_to 'Add New Car', new_car_path %>
-<% end %>
 
