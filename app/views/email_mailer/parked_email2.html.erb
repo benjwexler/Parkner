@@ -5,8 +5,11 @@
 
     Thanks for Parking with Parkner!
     </p>
+
+    <% if @parking.move_by != nil %>
     <p> You have to move your car by <%=@parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %> </p>
     <p> We will send you a reminder at <%=@parking.remind_at.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %> </p>
+    <% end %>
     <div id = "map_canvas"></div>
 
     <% lat = (@parking.start_lat.to_f + @parking.end_lat.to_f)/2 %>

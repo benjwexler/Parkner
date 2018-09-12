@@ -135,6 +135,7 @@ class ParkingsController < ApplicationController
         EmailMailer.parked_email2(@user, @parking).deliver
 
         if hours_until_reminder == false
+          
         else
           
           EmailMailer.reminder_email(@user).deliver_later(wait: hours_until_reminder.hours)
