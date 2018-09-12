@@ -2,42 +2,19 @@
 console.log("hi");
 </script>
 
-<h1>Your Parkings</h1>
+<h1>Your Current Parkings</h1>
 
 <% if @user_has_no_parkings == false %>
 
-<table>
-  <thead>
-    <tr>
-      
-      <th>Car</th>
-      <th>Address</th>
-      <th>Move By</th>
-      <th>Remind At</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-  
+<div class="container">
+  <div class="row">
     <% @parkings.each do |parking| %>
-      <tr>
-        <td><%= Car.find(parking.car_id).nickname %></td>
-        <td><%= parking.address %></td>
-        <% if parking.move_by %>
-          <td><%=  parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %></td>
-          <td><%=  parking.remind_at.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %></td>
-        <% else %>
-          <td><%=   %></td>
-          <td><%=   %></td>
-        <% end %>
-        <td><%= link_to 'Show', parking %></td>
-        <td><%= link_to 'Edit', edit_parking_path(parking) %></td>
-        <td><%= link_to 'Destroy', parking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col-sm-12">
+        <button><%= link_to Car.find(parking.car_id).nickname + ' Session', parking %></button>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
 <% else %> 
       <% if @user.cars == [] %>

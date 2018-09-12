@@ -58,4 +58,5 @@
 </script>
 
 <%= link_to 'Edit', edit_parking_path(@parking) %> |
+<%= link_to 'Destroy', @parking, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', parkings_path %>
