@@ -63,6 +63,8 @@ class ParkingsController < ApplicationController
   def create
 
     @user = current_user
+
+    hours_until_reminder = false
   
     if parking_params[:move_by].length > 0
 
@@ -117,7 +119,11 @@ class ParkingsController < ApplicationController
      
 
         EmailMailer.parked_email(@user).deliver
-        EmailMailer.reminder_email(@user).deliver_later(wait: hours_until_reminder.hours)
+
+        if hours_until_reminder == false
+        else
+          EmailMailer.reminder_email(@user).deliver_later(wait: hours_until_reminder.hours)
+        end`
 
         format.html { redirect_to @parking, notice: 'Parking was successfully created.' }
         format.json { render :show, status: :created, location: @parking }
