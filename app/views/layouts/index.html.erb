@@ -13,17 +13,19 @@
     <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type =>  'image/png' %>
   </head>
 
-  <body>
+<body>
+  <nav id="landing-nav" class="navbar navbar-light">
+    <a class="navbar-brand" href="#">
+    <%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span>
 
-<nav id="landing-nav" class="navbar navbar-light">
-  <a class="navbar-brand" href="#">
-  <%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span>
+    
+    <ul class="nav justify-content-end">
 
-  
-  <ul class="nav justify-content-end">
-    <%= render 'devise/menu/login' %>
-  </ul>
-</nav>
+      <%= render 'devise/menu/login' %>
+      
+    </ul>
+  </nav>
+
 
 
 
