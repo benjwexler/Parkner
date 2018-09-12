@@ -45,6 +45,8 @@ class ParkingsController < ApplicationController
   # GET /parkings/1/edit
   def edit
 
+    redirect_to "/parkings"
+
     @current_user = current_user.id
     @cars = User.find(current_user).cars
     @user_parkings = User.find(@current_user).parkings
@@ -70,16 +72,6 @@ class ParkingsController < ApplicationController
 
       mins = parking_params[:minutes_before]
     
-      puts "----------------------"
-      puts "----------------------"
-      puts "----------------------"
-      puts "----------------------"
-      puts mins
-      puts parking_params.inspect
-      puts "----------------------"
-      puts "----------------------"
-      puts "----------------------"
-      puts "----------------------"
 
       move_by_date_string = parking_params[:move_by] #<---move by parameter
       move_by_datetime_object = DateTime.parse(move_by_date_string)
@@ -137,7 +129,6 @@ class ParkingsController < ApplicationController
         if hours_until_reminder == false
           
         else
-          
           EmailMailer.reminder_email(@user).deliver_later(wait: hours_until_reminder.hours)
         end
 

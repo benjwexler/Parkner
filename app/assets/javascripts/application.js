@@ -494,7 +494,7 @@ let datesOfWeek = ["", "", "", "", "", "", ""];
 *REMEMBER TO USE THE RIGHT MAP ELEMENT
 
 PUT THIS IN HEADER ABOVE OWN SCRIPT:
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
+    
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 
