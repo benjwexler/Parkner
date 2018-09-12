@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parkner</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type =>  'image/png' %>
+  </head>
+
+  <body>
+
+<nav id="landing-nav" class="navbar navbar-light">
+  <a class="navbar-brand" href="#">
+  <%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span>
+
+  
+  <ul class="nav justify-content-end">
+    <%= render 'devise/menu/login' %>
+  </ul>
+</nav>
+
+
+
+<div id="landing-wrapper">
+  <div id="content-landing">
+    <h1>
+    <div>Your partner.</div>
+     <div class="b">In parking.</span></div>
+  </div>
+</div>
+
+  
+</body>
+</html>

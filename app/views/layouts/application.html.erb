@@ -6,24 +6,31 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type =>  'image/png' %>
   </head>
 
   <body>
+    <nav id="landing-nav" class="navbar navbar-light">
+      <a class="navbar-brand" href="#">
+      <%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span>
+
+    
+      <ul class="nav justify-content-end">
+        <%= render 'devise/menu/login' %>
+      </ul>
+  </nav>
+
+
+
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-  <h1> Parkner </h1>
-  <h4> Your Partner in Parking </h4>
-  <br>
-    <%= yield %>
-    <br>
-    <br>
-    <br>
-    <%= link_to 'Your Cars', cars_path %> |
-    <%= link_to 'Account Info', users_path %> |
-    <%= link_to 'Your Parking Sessions', parkings_path %> |
-    <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'header-link' %>
+    <div class="container">
+      <%= yield %>
+    
+    </div>
   </body>
 </html>

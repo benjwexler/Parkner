@@ -106,12 +106,28 @@ class ParkingsController < ApplicationController
     respond_to do |format|
       if @parking.save
 
+
+        puts "----------------------"
+        puts "----------------------"
+        puts "----------------------"
+        puts "----------------------"
+        puts "----------------------"
+        puts "----------------------"
+        puts @parking.inspect
+        puts "----------------------"
+        puts "----------------------"
+        puts "----------------------"  
+        puts "----------------------"
+        puts "----------------------"
      
 
         EmailMailer.parked_email(@user).deliver
+        EmailMailer.parked_email2(@user, @parking).deliver
 
         if hours_until_reminder == false
+          
         else
+          
           EmailMailer.reminder_email(@user).deliver_later(wait: hours_until_reminder.hours)
         end
 
