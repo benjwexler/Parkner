@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
+
     <h1>Hi <%= @user.first_name %></h1>
     <p>
 
@@ -12,5 +7,34 @@
     </p>
     <p> You have to move your car by <%=@parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %> </p>
     <p> We will send you a reminder at <%=@parking.remind_at.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %> </p>
-    </body>
-</html>
+    <div id = "map_canvas"></div>
+
+    <% lat = (@parking.start_lat.to_f + @parking.end_lat.to_f)/2 %>
+    <% lng = (@parking.start_long.to_f + @parking.end_long.to_f)/2 %>
+    <a href = "https://www.google.com/maps/search/?api=1&query=<%= lat %>,<%= lng %>">Get Directions</a>
+    
+   
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
+    <script>
+    let renderOldMap = () => {
+      let mapShow = new google.maps.Map(document.getElementById("map_canvas"), {
+        center: {
+            lat: Number(<%= lat %>), 
+            lng: Number(<%= lng %>)
+        },
+        zoom: 18,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+
+      let blockWholeShow = new google.maps.Polyline({
+        path: [{lat: Number(<%=@parking.start_lat%>), lng: Number(<%=@parking.start_long%>)}, {lat: Number(<%=@parking.end_lat%>), lng: Number(<%=@parking.end_long%>)}],
+        geodesic: true,
+        strokeColor: "#0066cc",
+        strokeOpacity: 1.0,
+        strokeWeight: 7,
+        zIndex: 1
+      });
+      blockWholeShow.setMap(mapShow);
+    }
+    renderOldMap();
+    </script>
