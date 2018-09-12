@@ -114,8 +114,7 @@ class ParkingsController < ApplicationController
     respond_to do |format|
       if @parking.save
 
-      p @parking.move_by
-      p @parking.remind_at
+     
 
         EmailMailer.parked_email(@user).deliver
         EmailMailer.reminder_email(@user).deliver_later(wait: hours_until_reminder.hours)
