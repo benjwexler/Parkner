@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hi <%= @user.first_name %></h1>
+    <p>
+
+
+    Thanks for Parking with Parkner!
+    </p>
+    <p> You have to move your car by <%=@parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %> </p>
+  </body>
+</html>
