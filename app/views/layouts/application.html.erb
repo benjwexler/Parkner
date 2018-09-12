@@ -14,15 +14,21 @@
   </head>
 
   <body>
-    <nav id="landing-nav" class="navbar navbar-light">
+    <nav id="landing-nav" class="navbar navbar-light navbar-expand-lg">
       <a class="navbar-brand" href="/">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
       <%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span>
 
       <ul class="nav justify-content-end">
     
         <%= render 'devise/menu/login' %>
-        
+
       </ul>
+    </div>
   </nav>
 
   
