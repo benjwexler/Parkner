@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parkner</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type =>  'image/png' %>
+  </head>
+
+  <body>
+
+<nav class="navbar navbar-light bg-light">
+  <a class="navbar-brand" href="#">
+  <%= image_tag image_path("parkner_logo.PNG"), :class => "nav-logo" %>
+  <span class="navbar-text">
+  <ul>
+    <li> Sign-Up </li>
+    <li> Login </li>
+  </ul>
+  </span>
+</nav>
+
+<h1>YO WELCOME TO PARKNER, SON!</h1>
+
+
+
+  
+</body>
+</html>
