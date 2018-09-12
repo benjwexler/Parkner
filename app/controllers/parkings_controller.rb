@@ -68,16 +68,6 @@ class ParkingsController < ApplicationController
 
       mins = parking_params[:minutes_before]
     
-      puts "----------------------"
-      puts "----------------------"
-      puts "----------------------"
-      puts "----------------------"
-      puts mins
-      puts parking_params.inspect
-      puts "----------------------"
-      puts "----------------------"
-      puts "----------------------"
-      puts "----------------------"
 
       move_by_date_string = parking_params[:move_by] #<---move by parameter
       move_by_datetime_object = DateTime.parse(move_by_date_string)
