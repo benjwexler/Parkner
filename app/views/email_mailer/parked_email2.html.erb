@@ -11,5 +11,6 @@
     Thanks for Parking with Parkner!
     </p>
     <p> You have to move your car by <%=@parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %> </p>
-  </body>
+    <p> We will send you a reminder at <%=@parking.remind_at.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %> </p>
+    </body>
 </html>
