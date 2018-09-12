@@ -11,27 +11,30 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type =>  'image/png' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   </head>
 
-  <body>
-    <nav id="landing-nav" class="navbar navbar-light navbar-expand-lg">
-      <a class="navbar-brand" href="/">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span>
-
-      <ul class="nav justify-content-end">
-    
-        <%= render 'devise/menu/login' %>
-
-      </ul>
-    </div>
-  </nav>
-
   
+
+  <body>
+  
+
+  <nav id="landing-nav" class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#"><%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" <%= link_to 'Cars', cars_path %></a>
+      <a class="nav-item nav-link" <%= link_to 'Parkings', parkings_path %></a>
+      <a class="nav-item nav-link" <%= link_to 'Account Settings', parkings_path %></a>
+    </div>
+  </div>
+</nav>
+
+
 
 
   <p class="notice"><%= notice %></p>
