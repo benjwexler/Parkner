@@ -4,6 +4,7 @@
     <title>Parkner</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
@@ -30,6 +31,7 @@
       <a class="nav-item nav-link" <%= link_to 'Cars', cars_path %></a>
       <a class="nav-item nav-link" <%= link_to 'Parkings', parkings_path %></a>
       <a class="nav-item nav-link" <%= link_to 'Account Settings', parkings_path %></a>
+      <%= link_to('Logout', destroy_user_session_path, :class => "nav-item nav-link", method: :delete) %>
     </div>
   </div>
 </nav>
@@ -39,7 +41,7 @@
 
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
-    <div class="container">
+    <div id="mainContainer" class="container">
       <%= yield %>
     
     </div>
