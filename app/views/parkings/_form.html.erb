@@ -41,7 +41,7 @@
 </div>
 
 <div class="field">
-  <%= form.text_field :address, :id => "address" %>
+  <%= form.text_field :address, :id => "address", :placeholder => "Address"%>
 </div>
 
 <div class="field">
@@ -62,11 +62,11 @@
 </div>
 
 <div class="field">
-  <%= form.text_field :move_by, :id => "move_by" %>
+  <%= form.text_field :move_by, :id => "move_by", :placeholder => "Move By" %>
 </div>
 
 <div class="field">
-  <%= form.text_field :remind_at, :value => "", :id => "remind-at" %>
+  <%= form.text_field :remind_at, :value => "", :id => "remind-at", :placeholder => "Remind At" %>
 </div>
 
 <div class="field">
@@ -83,9 +83,9 @@
   </select>
 </div>
 
-
-<div id="map_canvas"></div>
 <h1 id="display"></h1> 
+<div id="map_canvas"></div>
+
   
 
 <div class="actions">

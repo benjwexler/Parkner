@@ -10,28 +10,37 @@ console.log("hi");
   <div class="row">
     <% @parkings.each do |parking| %>
       <div class="col-sm-12">
-        <button><%= link_to Car.find(parking.car_id).nickname + ' Session', parking %></button>
+        <button class="btn btn-outline-info">
+        <a href="/parkings/<%= parking.id%>"> <%= Car.find(parking.car_id).nickname %> Session </a> <br>
+        Move By: <%= parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %>
+        </button>
       </div>
     <% end %>
   </div>
-</div>
 
 <% else %> 
       <% if @user.cars == [] %>
-      <p>Looks like you don't have any cars registered. 
-<br>
-<br>
-Click <%= link_to 'Here', new_car_path %> to register your first car!</p>
+        <div class="row">
+            <div class="col-sm-12">
+            <p>Looks like you don't have any cars registered. 
+        </div>
+        <div class="col-sm-12">
+          Click <%= link_to 'Here', new_car_path %> to register your first car!</p>
+        </div>
+        </div>
       <% else %>
-<p>Looks like you don't have any current parking sessions. 
-<br>
-<br>
-Click <%= link_to 'Here', new_parking_path %> to Parkner for the first time!</p>
+        <div class="row">
+          <p>Looks like you don't have any current parking sessions. 
+          <br>
+          <br>
+          Click <%= link_to 'Here', new_parking_path %> to Parkner for the first time!</p>
+        </div>
 <% end %>
 <% end %>
 <br>
 <% if @user_has_no_parkings == false %>
-<%= link_to 'Create New Parking Session', new_parking_path %>
+  <%= link_to 'Create New Parking Session', new_parking_path %>
+  </div>
 <% end %>
 
 

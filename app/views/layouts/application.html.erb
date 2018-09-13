@@ -5,7 +5,6 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
@@ -30,7 +29,7 @@
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" <%= link_to 'Cars', cars_path %></a>
       <a class="nav-item nav-link" <%= link_to 'Parkings', parkings_path %></a>
-      <a class="nav-item nav-link" <%= link_to 'Account Settings', parkings_path %></a>
+      <a class="nav-item nav-link" <%= link_to 'Account Settings', user_path(current_user) %></a>
       <%= link_to('Logout', destroy_user_session_path, :class => "nav-item nav-link", method: :delete) %>
     </div>
   </div>
