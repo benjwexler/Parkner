@@ -43,7 +43,9 @@ console.log("hi");
 <% end %>
 <br>
 <% if @user_has_no_parkings == false %>
-  <%= link_to 'Create New Parking Session', new_parking_path %>
+  <button class="addButton">
+    <%= link_to 'Create New Parking Session', new_parking_path %>
+  </button>
   </div>
 <% end %>
 
