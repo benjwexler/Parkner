@@ -1,10 +1,15 @@
-<script>
-console.log("hi");
-</script>
+<div class="container-fluid">
+  <div id="rowTextAlign" class ="row">
+  <div id ="titleContainer" class = "col-sm-12">
 
-<h1>Your Current Parkings</h1>
+<h1>Current Parkings</h1>
+
+</div>
+</div>
 
 <% if @user_has_no_parkings == false %>
+
+<div id="carOutterWrapper"> 
 
 <div class="container">
   <div class="row">
@@ -48,5 +53,7 @@ console.log("hi");
   </button>
   </div>
 <% end %>
+
+</div>
 
 

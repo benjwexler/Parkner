@@ -1,25 +1,36 @@
+<div class="container-fluid">
+  <div id="rowTextAlign" class ="row">
+  <div id ="titleContainer" class = "col-sm-12">
+
 <h1>Account Info</h1>
+
+</div>
+</div>
+
+<div id="carOutterWrapper"> 
 
 <p>
   <strong>First name:</strong>
-  <%= @user.first_name %>
+  <span style="color:#3F6188"><%= @user.first_name %></span>
 </p>
 
 <p>
   <strong>Last name:</strong>
-  <%= @user.last_name %>
+  <span style="color:#3F6188"><%= @user.last_name %></span>
 </p>
 
 <p>
   <strong>Phone number:</strong>
-  <%= @user.phone_number %>
+  <span style="color:#3F6188"><%= @user.phone_number %></span>
 </p>
 
 <p>
   <strong>Email:</strong>
-  <%= @user.email %>
+  <span style="color:#3F6188"><%= @user.email %></span>
 </p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' } %> 
+
+</div>
