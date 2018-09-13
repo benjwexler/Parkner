@@ -19,7 +19,7 @@
     // height: 500px;
     text-align: center;
     max-width: 800px;
-    max-width: 90vw;
+    
 
    
     // padding: 0;
@@ -40,6 +40,12 @@
     // color: white;
     // background-color: blue;
     background-color: #f8f9fa !important;
+}
+
+@media only screen and (max-width: 414px) {
+    #mainContainer {
+        max-width: 90vw;
+    }
 }
 
 #submitPark {
