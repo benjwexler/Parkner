@@ -24,16 +24,22 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
   <i class="fas fa-bars"></i>
   </button>
+  
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+    <%if current_user != nil %>
+      <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" <%= link_to 'Cars', cars_path %></a>
       <a class="nav-item nav-link" <%= link_to 'Parkings', parkings_path %></a>
-      <%if current_user != nil %>
+      
         <a class="nav-item nav-link" <%= link_to 'Account Settings', user_path(current_user) %></a>
       
         <%= link_to('Logout', destroy_user_session_path, :class => "nav-item nav-link", method: :delete) %>
-      <% end %>
+      <% else %>
+      <a class="nav-item nav-link" <%= link_to 'Login', new_user_session_path  %>    </a>
+      <a class="nav-item nav-link" <%= link_to 'Sign Up', new_user_registration_path %>  </a>
+      
+        <% end %>
       </div>
   </div>
 </nav>
