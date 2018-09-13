@@ -1,15 +1,15 @@
-<div class="container">
   <h1>Your Cars</h1>
 
   <% if @user_has_no_cars == false %>
 
   <div id="cars-wrapper">
 
-
+  <div class="row">
   <% @cars.each do |car| %>
-    <div>
+    <div class="col-sm-12">
+      <a href="/cars/<%= car.id%>"><button class="btn btn-outline-info">
       <%= link_to car.nickname, car %>
-  
+      </button></a>
     
       
     </div>
@@ -28,6 +28,5 @@
       <%= link_to 'Add New Car', new_car_path %>
     </button>
   <% end %>
-</div>
 
 
