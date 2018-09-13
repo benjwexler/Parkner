@@ -11,7 +11,7 @@ console.log("hi");
     <% @parkings.each do |parking| %>
       <div class="col-sm-12">
       <a href="/parkings/<%= parking.id%>"> 
-        <button class="btn btn-outline-info">
+        <button class="btn btn-info buttonWidth">
         <%= Car.find(parking.car_id).nickname %> Session  <br>
         <% if parking.move_by != nil %>
           Move By: <%= parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %>
@@ -43,7 +43,9 @@ console.log("hi");
 <% end %>
 <br>
 <% if @user_has_no_parkings == false %>
-  <%= link_to 'Create New Parking Session', new_parking_path %>
+  <button class="addButton">
+    <%= link_to 'Create New Parking Session', new_parking_path %>
+  </button>
   </div>
 <% end %>
 

@@ -80,6 +80,15 @@
     // background: $aqua;
     min-height: 330px;
     margin-top: 7%;
-    border: 2px solid $aqua;
     border-radius: 5%;
+}
+
+.buttonWidth {
+    max-width: 300px;
+    width: 70%;
+    margin: 2px;
+}
+
+.addButton {
+    width: 250px;
 }
