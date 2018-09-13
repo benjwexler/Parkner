@@ -289,6 +289,7 @@ let getRulesFromCoords = () => {
             },
             title: "User Position"
         });
+        /*
         let userRadius = new google.maps.Circle({
             map: map,
             radius: 50,    
@@ -296,7 +297,7 @@ let getRulesFromCoords = () => {
             strokeColor: "#0000e6",
             strokeWeight: .5,
         });
-        userRadius.bindTo("center", userMarker, "position");
+        userRadius.bindTo("center", userMarker, "position");*/
         //------------------------------------------------------------------------------------------------------------------
 
         let allCurbs = []; //<--- hold all valid curb objects
