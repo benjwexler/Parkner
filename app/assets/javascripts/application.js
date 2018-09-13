@@ -323,19 +323,9 @@ let getRulesFromCoords = () => {
 
             //CREATE EVENT CLICK LISTENER FOR EACH LINE---------------------------------------------------------------------
             blockWhole.addListener("click", ()=>{
-                console.log("AAAAAHHHHHHHHH");
-                console.log("AAAAAHHHHHHHHH");
-                console.log("AAAAAHHHHHHHHH");
-                console.log("AAAAAHHHHHHHHH");
-                console.log(document.getElementById("submitPark").style.display);
                 if (document.getElementById("submitPark").style.display === "") {
                     document.getElementById("submitPark").style.display = "initial";
                 }
-                console.log("AAAAAHHHHHHHHH");
-                console.log("AAAAAHHHHHHHHH");
-                console.log("AAAAAHHHHHHHHH");
-                console.log("AAAAAHHHHHHHHH");
-
                 let moveByFinal;
                 console.log("-----------------------------------------------------");
                 console.log("-----------------------------------------------------");
@@ -431,7 +421,7 @@ let getRulesFromCoords = () => {
                     document.getElementById("display").innerText = "A car can stay here all week";
                     alert("You cant set a reminder for a car that can stay parked all week but you can store its location.")
 
-                    document.getElementById("submitPark").innerHTML = "Create Parking";
+                    //document.getElementById("submitPark").innerHTML = "Create Parking";
 
 
                     document.getElementById("start_lat").value = parkData.backUp.start.lat;

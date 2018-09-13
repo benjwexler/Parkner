@@ -13,7 +13,7 @@ console.log("hi");
         <button class="btn btn-outline-info">
         <a href="/parkings/<%= parking.id%>"> <%= Car.find(parking.car_id).nickname %> Session </a> <br>
         <% if parking.move_by != nil %>
-         Move By: <%= parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %>
+          Move By: <%= parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %>
         <% end %>
         </button>
       </div>
