@@ -22,5 +22,11 @@ class EmailMailer < ApplicationMailer
         mail(to: @user.email, subject: 'Your Parkner Reminder is Set!')
     end
 
+    def deliverLater(user, parking)
+        @user = user
+        @parking = parking
+        mail(to: @user.email, subject: 'You will receive this 2 min after you parked!')
+    end
+
 
 end
