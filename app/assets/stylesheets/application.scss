@@ -2,6 +2,7 @@
 @import "bootstrap";
 @import "landing";
 @import "map";
+// @import "parkings";
 
 .bg-light {
     background-color: #f8f9fa !important;
@@ -11,9 +12,13 @@
 #mainContainer {
     border: 2px solid;
     min-height: 70vh;
+    // height: 500px;
     text-align: center;
+    max-width: 800px;
     // background: white;
 }
+
+
 
 
 
