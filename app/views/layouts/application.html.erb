@@ -29,7 +29,7 @@
       <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" <%= link_to 'Cars', cars_path %></a>
       <a class="nav-item nav-link" <%= link_to 'Parkings', parkings_path %></a>
-      <a class="nav-item nav-link" <%= link_to 'Account Settings', "/users/#{current_user.id}" %></a>
+      <a class="nav-item nav-link" <%= link_to 'Account Settings', user_path(current_user) %></a>
       <%= link_to('Logout', destroy_user_session_path, :class => "nav-item nav-link", method: :delete) %>
     </div>
   </div>
