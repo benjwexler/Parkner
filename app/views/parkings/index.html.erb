@@ -12,7 +12,7 @@ console.log("hi");
       <div class="col-sm-12">
         <button class="btn btn-outline-info">
         <a href="/parkings/<%= parking.id%>"> <%= Car.find(parking.car_id).nickname %> Session </a> <br>
-        Move By: <%= parking.move_by %>
+        Move By: <%= parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %>
         </button>
       </div>
     <% end %>
