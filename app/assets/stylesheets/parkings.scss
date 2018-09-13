@@ -1,9 +1,10 @@
 // Place all the styles related to the Parkings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
 #map_canvas {
-    height: 300px;
-    width: 400px;
+    height: 50%;
+    width: 50%;
 }
 #submitPark {
     display: none;
