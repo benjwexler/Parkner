@@ -41,37 +41,35 @@
 </div>
 
 <div class="field">
-  <%= form.text_field :address, :id => "address", :placeholder => "Address"%>
+  <%= form.hidden_field :address, :id => "address", :placeholder => "Address"%>
 </div>
 
 <div class="field">
-  <%= form.text_field :start_lat, :id => "start_lat" %>
+  <%= form.hidden_field :start_lat, :id => "start_lat" %>
 </div>
 
 <div class="field">
-  <%= form.text_field :end_lat, :id => "end_lat" %>
+  <%= form.hidden_field :end_lat, :id => "end_lat" %>
 </div>
 
 <div class="field">
 
-  <%= form.text_field :start_long, :id => "start_long" %>
+  <%= form.hidden_field :start_long, :id => "start_long" %>
 </div>
 
 <div class="field">
-  <%= form.text_field :end_long, :id => "end_long" %>
+  <%= form.hidden_field :end_long, :id => "end_long" %>
 </div>
 
 <div class="field">
-  <%= form.text_field :move_by, :id => "move_by", :placeholder => "Move By" %>
+  <%= form.hidden_field :move_by, :id => "move_by", :placeholder => "Move By" %>
 </div>
 
 <div class="field">
-  <%= form.text_field :remind_at, :value => "", :id => "remind-at", :placeholder => "Remind At" %>
+  <%= form.hidden_field :remind_at, :value => "", :id => "remind-at", :placeholder => "Remind At" %>
 </div>
 
-<div class="field">
-  <%= form.text_field :minutes_before, :value => "", :id => "remind-at" %>
-</div>
+
 
 <div class="field">
   <%= form.label :minutes_before %>

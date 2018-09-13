@@ -1,9 +1,3 @@
-
-<%= link_to 'Your Cars', cars_path %> |
-<%= link_to 'Account Info', users_path %> |
-<%= link_to 'Your Parking Sessions', parkings_path %> |
-<%= link_to "Sign out", destroy_user_session_path, :method => :delete, class: 'header-link' %>
-
 <p>
   <strong>First name:</strong>
   <%= @user.first_name %>
@@ -24,28 +18,6 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
-<p>
-  <strong>cars:</strong>
-  <% @cars.each do |car| %>
-    <%=car.nickname%>
-  <%end%>
-  
- 
-</p>
-<p>
-  <strong>Parkings:</strong>
-  
-  <% @parkings.each do |session| %>
-    <%=session.user_id%>
-  <%end%>
-  
-</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Cars', cars_path %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' } %> 
