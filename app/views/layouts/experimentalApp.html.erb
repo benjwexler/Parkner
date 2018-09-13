@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parkner</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type =>  'image/png' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  </head>
+
+  <style> 
+ 
+  </style>
+
+  <body>
+  <!--Navbar-->
+  <nav id="landing-nav" class="navbar navbar-light light-blue lighten-4">
+  
+      <!-- Navbar brand -->
+      <a class="navbar-brand" href="#"><%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span></a>
+  
+      <!-- Collapse button -->
+      <button class="navbar-toggler toggler-example" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1"
+          aria-expanded="false" aria-label="Toggle navigation"><span class="dark-blue-text"><i class="fa fa-bars fa-1x"></i></span></button>
+  
+      <!-- Collapsible content -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+      
+  
+          <!-- Links -->
+          <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Pricing</a>
+              </li>
+          </ul>
+          <!-- Links -->
+  
+      </div>
+      <!-- Collapsible content -->
+  
+  </nav>
+  <!--/.Navbar-->
+    </div>
+  </nav>
+
+  
+
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+    <div class="container">
+      <%= yield %>
+    
+    </div>
+  </body>
+</html>

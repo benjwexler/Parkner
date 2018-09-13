@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parkner</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type =>  'image/png' %>
+  </head>
+
+  <body>
+    <nav id="landing-nav" class="navbar navbar-light navbar-expand-lg">
+      <a class="navbar-brand" href="/">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span>
+
+      <ul class="nav justify-content-end">
+    
+        <%= render 'devise/menu/newLogin' %>
+
+      </ul>
+    </div>
+  </nav>
+
+  
+
+
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+    <div class="container">
+      <%= yield %>
+    
+    </div>
+  </body>
+</html>
