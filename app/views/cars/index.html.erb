@@ -1,4 +1,12 @@
+<div class="container-fluid">
+  <div id="rowTextAlign" class ="row">
+  <div id ="titleContainer" class = "col-sm-12">
   <h1>Your Cars</h1>
+
+</div>
+</div>
+
+<div id="carOutterWrapper"> 
 
   <% if @user_has_no_cars == false %>
 
@@ -35,5 +43,8 @@
     <%= link_to 'Add New Parking Session', new_parking_path %>
     </button>
   <% end %>
+  </div>
+  <div class="borderBottom"> </div>
+</div>
 
 
