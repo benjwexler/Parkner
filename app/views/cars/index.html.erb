@@ -12,18 +12,22 @@
 
   <div id="cars-wrapper">
 
-
+  <div class="row">
   <% @cars.each do |car| %>
-    <div>
-      <%= link_to car.nickname, car %>
-  
+    <div class="col-sm-12">
+      <a href="/cars/<%= car.id%>">
+        <button class="btn btn-outline-info">
+          <%= car.nickname %>
+        </button>
+      </a>
     
       
     </div>
   <% end %>
   </div>
 
-  <% else %> 
+  <% else %>
+   
     <p>Looks like you don't have any cars registered. 
     <br>
     Click <%= link_to 'Here', new_car_path %> to register your first vehicle!</p>
@@ -33,6 +37,10 @@
     <% if @user_has_no_cars == false %>
     <button>
       <%= link_to 'Add New Car', new_car_path %>
+    </button>
+    <br>
+    <button>
+    <%= link_to 'Add New Parking Session', new_parking_path %>
     </button>
   <% end %>
   </div>

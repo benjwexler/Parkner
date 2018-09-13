@@ -10,12 +10,14 @@ console.log("hi");
   <div class="row">
     <% @parkings.each do |parking| %>
       <div class="col-sm-12">
+      <a href="/parkings/<%= parking.id%>"> 
         <button class="btn btn-outline-info">
-        <a href="/parkings/<%= parking.id%>"> <%= Car.find(parking.car_id).nickname %> Session </a> <br>
+        <%= Car.find(parking.car_id).nickname %> Session  <br>
         <% if parking.move_by != nil %>
           Move By: <%= parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %>
         <% end %>
         </button>
+      </a>
       </div>
     <% end %>
   </div>
