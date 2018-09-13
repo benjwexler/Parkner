@@ -9,6 +9,7 @@
     // background-color: #F8E24E !important;
     border: 2px solid;
     border-radius: 15px;
+    
 }
 
 #mainContainer {
@@ -18,8 +19,9 @@
     // height: 500px;
     text-align: center;
     max-width: 800px;
-    padding: 0;
+    // padding: 0;
     border-radius: 5%;
+    
     // background-color: rgb(233, 183, 255) !important;
     // background: #83a4d4;  /* fallback for old browsers */
     // background: -webkit-linear-gradient(to right, #b6fbff, #83a4d4);  /* Chrome 10-25, Safari 5.1-6 */
@@ -34,7 +36,7 @@
     
     // color: white;
     // background-color: blue;
-    // color: $white;;
+    background-color: #f8f9fa !important;
 }
 
 #submitPark {
@@ -48,8 +50,11 @@
     
     // max-width: 200px;
     margin: auto;
-    color: $aqua;
+    color: $blue;
+    padding-top: 4%;
+    border-bottom: 5px solid $yellow;
     // background: white;
+    // background: $yellow;
    
 }
 
@@ -65,3 +70,16 @@
     color: $blue;
 }
 
+// .borderBottom {
+//     border-bottom: 5px solid $yellow;
+//     padding: 0;
+   
+// }
+
+#carOutterWrapper {
+    // background: $aqua;
+    min-height: 330px;
+    margin-top: 7%;
+    border: 2px solid $aqua;
+    border-radius: 5%;
+}
