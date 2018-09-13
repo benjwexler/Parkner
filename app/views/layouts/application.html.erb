@@ -43,10 +43,27 @@
 
   
     <div id="mainContainer" class="container">
-    <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+    <p id="notice" class="notice"><%= notice %></p>
+  <p id="alert" class="alert"><%= alert %></p>
       <%= yield %>
     
     </div>
   </body>
+
+  <script>
+  
+
+  document.addEventListener("turbolinks:load", () => {
+    let notice = document.getElementById("notice");
+    let alert = document.getElementById("alert");
+    if (notice.innerHTML == ""){
+      notice.style.display = "none";
+    }
+
+    if (alert.innerHTML == "") {
+      alert.style.display = "none";
+    };
+  })
+
+  </script>
 </html>
