@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # "home#index"
 
   authenticated do 
-    root :to => 'home#index'
+    root :to => 'cars#index'
   end
   root :to => 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
