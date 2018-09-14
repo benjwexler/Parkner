@@ -115,6 +115,16 @@
     border-radius: 15px;
 }
 
+.terminateButton {
+    width: 70%;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px;
+
+    a {
+        color: white;
+    }
+}
+
 input {
     border: .5px solid $blue;   
 }

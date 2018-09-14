@@ -49,11 +49,14 @@
   <% end %>
 </p>
 
+<button class="btn btn-info terminateButton">
+  <%= link_to 'End Parking Session', @parking, method: :delete, data: { confirm: 'Are you sure?' } %>
+</button>
+
 <div id="map_canvas"></div>
 
 <script>
   renderOldMap();
 </script>
 
-<%= link_to 'Destroy', @parking, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', parkings_path %>
