@@ -4,6 +4,7 @@
     <title>Parkner</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
@@ -15,18 +16,23 @@
 
 <body>
   <nav id="landing-nav" class="navbar navbar-light">
-    <a class="navbar-brand" href="#">
-    <%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span>
+    <a class="navbar-brand" href="/">
+    <%= image_tag image_path("parkner_logo_white_blue.PNG"), :class => "nav-logo" %><span>Parkner</span>
 
     
     <ul class="nav justify-content-end">
 
       <%= render 'devise/menu/login' %>
-      
+    
+     
+
     </ul>
+   
+    <hr id="line" style="margin-left: 70px; margin-right: 70px; background: #3F6188;">
+   
   </nav>
 
-
+  
 
 
 <div id="landing-wrapper">
@@ -34,6 +40,11 @@
     <h1>
     <div>Your partner.</div>
      <div class="b">In parking.</span></div>
+  </div>
+  <div>
+
+  <br>
+    <h2>Never worry about violating parking regulations ever again.<h2>
   </div>
 </div>
 

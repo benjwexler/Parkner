@@ -1,6 +1,5 @@
 body{
-    background-color: $yellow;
-    background-color: $blue;
+    background-color: $aqua;
     //
    
 //     background: #1e3c72;  /* fallback for old browsers */
@@ -9,13 +8,20 @@ body{
 // background: white;
     font-family: 'Fredoka One', cursive;
     #landing-nav{
-        margin: 20px;
-        background-color: $yellow;
+        margin:   20px 50px;
+        background-color: $aqua;
         color: $blue;
         
         span {
             font-family: 'Fredoka One', cursive;
             color: $blue;
+        }
+
+        #line {
+        color: red;    
+        border: none;
+        height: 10px;
+        background: #ccc;
         }
 
         .nav-logo{
@@ -27,6 +33,12 @@ body{
             margin: 10px;
         }
 
+        #line {
+            height: 5px;
+            border: 0;
+            width: 80%;
+          }
+
         // a:hover{
         //     color: $aqua;
         //     background-color: $blue;
@@ -37,6 +49,9 @@ body{
 
     #landing-wrapper{
         display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         margin: 30px;
         height: 100%;
         border: solid 5px $aqua;
@@ -48,7 +63,12 @@ body{
                 font-size: 600%;
             }
             .b{
-                text-indent: 200px;
+                text-indent: 250px;
+            }
+
+            h2{
+                align-self: center;
+                text-align: center;
             }
         }
     }

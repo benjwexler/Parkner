@@ -1,22 +1,18 @@
-<% if user_signed_in? %>
-    <div class="dropdown">
-        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <%= current_user.first_name %>
-        </a>
+<%if current_user != nil %>
 
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <%= link_to 'Account', (current_user), :class => "dropdown-item"%>
-            <div class="dropdown-divider"></div>
-            <%= link_to('Logout', destroy_user_session_path, :class => "dropdown-item", method: :delete) %> 
-        </div>
-    </div>
-<% else %>
-    <li class="nav-item">
-        <%= link_to 'Sign Up', new_user_registration_path %>  
-    </li>
-    <li> 
-        <%= link_to 'Login', new_user_session_path  %>  
-    </li>
-
+    <a class="nav-item nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+    <a class="nav-item nav-link" <%= link_to 'Cars', cars_path %></a>
+    <a class="nav-item nav-link" <%= link_to 'Parkings', parkings_path %></a>
     
+    <a class="nav-item nav-link" <%= link_to 'Account Settings', user_path(current_user) %></a>
+
+    <%= link_to('Logout', destroy_user_session_path, :class => "nav-item nav-link", method: :delete) %>
+
+<% else %>
+    <a class="nav-item nav-link" <%= link_to 'Login', new_user_session_path  %>    </a>
+    <a class="nav-item nav-link" <%= link_to 'Sign Up', new_user_registration_path %>  </a> 
+      
 <% end %>
+      </div>
+  </div>
+</nav>
