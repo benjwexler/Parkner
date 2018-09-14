@@ -123,15 +123,15 @@ class ParkingsController < ApplicationController
         puts "----------------------"
      
 
-        EmailMailer.parked_email(@user).deliver
+        # EmailMailer.parked_email(@user).deliver
         EmailMailer.parked_email2(@user, @parking).deliver
-        EmailMailer.deliverLater(@user, @parking).deliver_later(wait: 2.minutes)
+        # EmailMailer.deliverLater(@user, @parking).deliver_later(wait: 2.minutes)
         
 
         if hours_until_reminder == false
           
         else
-          EmailMailer.reminder_email(@user).deliver_later(wait: hours_until_reminder.hours)
+          EmailMailer.deliverLater(@user, @parking).deliver_later(wait: hours_until_reminder.hours)
           
         end
 
