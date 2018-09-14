@@ -5,46 +5,56 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
-    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
+    <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Fredoka+One|Roboto|Ubuntu', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= favicon_link_tag asset_path('favicon.ico'), :rel => 'icon', :type =>  'image/png' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
   </head>
 
-<body>
-  <nav id="landing-nav" class="navbar navbar-light">
-    <a class="navbar-brand" href="/">
-    <%= image_tag image_path("parkner_logo_white_blue.PNG"), :class => "nav-logo" %><span>Parkner</span>
 
+<body style="background: #9BE5F3">
+<nav id="landing-nav" class="navbar navbar-expand-lg navbar-light bg-light">
+<a class="navbar-brand" href="#"><%= image_tag image_path("parkner_p.PNG"), :class => "nav-logo" %><span>arkner</span></a>
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+<i class="fas fa-bars"></i>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+  <div class="navbar-nav">
+  
+  <%if current_user != nil %>
+    <a class="nav-item nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+    <a class="nav-item nav-link" <%= link_to 'Cars', cars_path %></a>
+    <a class="nav-item nav-link" <%= link_to 'Parkings', parkings_path %></a>
     
-    <ul class="nav justify-content-end">
-
-      <%= render 'devise/menu/login' %>
+      <a class="nav-item nav-link" <%= link_to 'Account Settings', user_path(current_user) %></a>
     
-     
-
-    </ul>
-   
-    <hr id="line" style="margin-left: 70px; margin-right: 70px; background: #3F6188;">
-   
-  </nav>
+      <%= link_to('Logout', destroy_user_session_path, :class => "nav-item nav-link", method: :delete) %>
+    <% else %>
+    <a class="nav-item nav-link" <%= link_to 'Login', new_user_session_path  %>    </a>
+    <a class="nav-item nav-link" <%= link_to 'Sign Up', new_user_registration_path %>  </a>
+    
+      <% end %>
+    </div>
+</div>
+</nav>
 
   
 
 
 <div id="landing-wrapper">
   <div id="content-landing">
-    <h1>
+    <h1 id="landing-text">
     <div>Your partner.</div>
-     <div class="b">In parking.</span></div>
+     <div id="text-indent" class="b">In parking.</span></div>
+     </h1>
   </div>
   <div>
 
   <br>
-    <h2>Never worry about violating parking regulations ever again.<h2>
+    <h2 id="never-worry-text">Never worry about parking regulations again.<h2>
   </div>
 </div>
 
