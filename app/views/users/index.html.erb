@@ -1,6 +1,13 @@
+<div class="container-fluid">
+  <div id="rowTextAlign" class ="row">
+  <div id ="titleContainer" class = "col-sm-12">
+
 <h1>Welcome, <%= @user.first_name %>!</h1>
 
-<div class="container">
+</div>
+</div>
+<div id="carOutterWrapper"> 
+
   <div>
     <button> 
       <%= link_to 'Cars', cars_path %>
@@ -12,6 +19,8 @@
       <%= link_to 'Park', parkings_path %>
     </button>
   </div>
+
+</div>
 
 </div>
 
