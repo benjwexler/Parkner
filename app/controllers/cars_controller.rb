@@ -27,7 +27,7 @@ class CarsController < ApplicationController
   # GET /cars/new
   def new
     @car = Car.new
-    @current_user = current_user.id
+    @current_user = current_user
     
   end
 

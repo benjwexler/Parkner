@@ -1,7 +1,16 @@
+<div class="container-fluid">
+  <div id="rowTextAlign" class ="row">
+  <div id ="titleContainer" class = "col-sm-12">
 
-<h1>  
+  <h1>  
   <%= @car.nickname %>
 </h1>
+
+</div>
+</div>
+
+<div id="carOutterWrapper"> 
+
 
 <p>
   <strong>Description:</strong>
@@ -13,3 +22,5 @@
 <%= link_to 'Edit', edit_car_path(@car) %> |
 <%= link_to 'Destroy', @car, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', cars_path %>
+
+</div>
