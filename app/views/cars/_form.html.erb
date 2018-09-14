@@ -18,12 +18,12 @@
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, :placeholder => "Optional" %>
   </div>
 
   <div class="field">
-   
-    <%= form.hidden_field :user_id, :value => @current_user %>
+ 
+    <%= form.hidden_field :user_id, :value => current_user.id %>
   </div>
 
   <div class="actions">

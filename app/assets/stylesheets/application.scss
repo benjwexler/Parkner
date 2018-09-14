@@ -2,7 +2,8 @@
 @import "bootstrap";
 @import "landing";
 @import "map";
-// @import "parkings";
+// require "parkings";
+
 
 .bg-light {
     background-color: #f8f9fa !important;
@@ -95,16 +96,43 @@
 }
 
 .buttonWidth {
-    max-width: 300px;
-    width: 70%;
-    margin: 2px;
+    width: 100%;
+    margin: 3px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+
+    div {
+        width: 95%;
+    }
 }
 
 .addButton {
     width: 250px;
+    max-width: 90%;
+    -webkit-appearance: none;
+    font-family: 'Roboto', sans-serif;
+    margin: 3px;
+    border-radius: 15px;
+}
+
+.terminateButton {
+    width: 70%;
+    font-family: 'Roboto', sans-serif;
+    margin: 10px;
+
+    a {
+        color: white;
+    }
 }
 
 input {
-    border: .5px solid $blue;
-    
+    border: .5px solid $blue;   
+}
+
+label, input, select, option {
+    font-family: 'Roboto', sans-serif;
+}
+
+select {
+    border: 0.5px solid #3F6188;
 }
