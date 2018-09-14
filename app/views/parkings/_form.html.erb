@@ -83,6 +83,10 @@
 
 <h3 id="display"></h3> 
 
+<div class="actions">
+  <%= form.submit :id => "submitPark" %>
+</div>
+
 <div class="row">
     <div class="col-sm-12">
       <div id="map_canvas"></div>
@@ -91,9 +95,7 @@
 
   
 
-<div class="actions">
-  <%= form.submit :id => "submitPark" %>
-</div>
+
 
    <% else %>
     <p> Looks like all your cars are currently parked!
