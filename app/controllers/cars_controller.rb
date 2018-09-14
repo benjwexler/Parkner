@@ -33,7 +33,7 @@ class CarsController < ApplicationController
 
   # GET /cars/1/edit
   def edit
-   
+    @car = Car.find(params[:id])
   end
 
   # POST /cars
