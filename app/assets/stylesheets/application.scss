@@ -2,7 +2,8 @@
 @import "bootstrap";
 @import "landing";
 @import "map";
-// @import "parkings";
+// require "parkings";
+
 
 .bg-light {
     background-color: #f8f9fa !important;
@@ -102,6 +103,8 @@
 
 .addButton {
     width: 250px;
+    max-width: 65%;
+    -webkit-appearance: none;
 }
 
 input {
