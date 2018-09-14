@@ -1,17 +1,24 @@
 <% lat = (@parking.start_lat.to_f + @parking.end_lat.to_f)/2 %>
 <% lng = (@parking.start_long.to_f + @parking.end_long.to_f)/2 %>
 
+<div class="container-fluid">
+  <div id="rowTextAlign" class ="row">
+  <div id ="titleContainer" class = "col-sm-12">
+
+<h1><%= Car.find(@parking.car_id).nickname %></h1>
+
+</div>
+</div>
+
 <div class="infoTable">
 
-  <div class="infoRow">
-    <div class="infoCellLeft"> Car: </div>
-    <div class="infoCellRight"> <%= Car.find(@parking.car_id).nickname %> </div>
-  </div>
+ 
 
   <div class="infoRow">
+  <% if @parking.move_by  %>
     <div class="infoCellLeft"> Move By: </div>
     <div class="infoCellRight"> 
-      <% if @parking.move_by  %>
+      
         <%= @parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %>
       <% else %>
         <%= %>
