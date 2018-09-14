@@ -11,31 +11,32 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
-  </div>
+  <div class="infoTable">
+    <div class="infoRow">
+    <div class="infoCellLeft"> <%= form.label :first_name %> </div>
+      <div class="infoCellRight"> <%= form.text_field :first_name %> </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
-  </div>
+    <div class="infoRow">
+      <div class="infoCellLeft"> <%= form.label :last_name %> </div>
+      <div class="infoCellRight"> <%= form.text_field :last_name %> </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number %>
-  </div>
+    <div class="infoRow">
+      <div class="infoCellLeft"> <%= form.label :phone_number %> </div>
+      <div class="infoCellRight"> <%= form.text_field :phone_number %> </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email %>
-  </div>
+    <div class="infoRow">
+      <div class="infoCellLeft"> <%= form.label :email %> </div>
+      <div class="infoCellRight"> <%= form.text_field :email %> </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password %>
+    <div class="infoRow">
+      <div class="infoCellLeft"> <%= form.label :password %> </div>
+      <div class="infoCellRight"> <%= form.password_field :password %> </div>
+    </div>
   </div>
-
   <div class="actions">
     <%= form.submit %>
   </div>

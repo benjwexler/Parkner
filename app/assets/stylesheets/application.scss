@@ -126,17 +126,14 @@
     border-radius: 15px;
 }
 
-.terminateButton, .directionButton {
+.buttonStyle {
     width: 70%;
     font-family: 'Roboto', sans-serif;
+    margin: 10px;
 
     a {
         color: white;
     }
-}
-
-.terminateButton {
-    margin: 10px;
 }
 
 input {
@@ -147,8 +144,10 @@ label, input, select, option, .infoCellLeft, .infoCellRight {
     font-family: 'Roboto', sans-serif;
 }
 
-select {
+select, #submitPark {
     border: 0.5px solid #3F6188;
+    background-color: #00A5BB;
+    color: white;
 }
 
 .infoTable {
