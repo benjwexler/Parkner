@@ -96,15 +96,17 @@
 }
 
 .buttonWidth {
-    max-width: 300px;
-    width: 70%;
-    margin: 2px;
+    width: 100%;
+    margin: 3px;
+    font-family: 'Roboto', sans-serif;
 }
 
 .addButton {
     width: 250px;
-    max-width: 65%;
+    max-width: 90%;
     -webkit-appearance: none;
+    font-family: 'Roboto', sans-serif;
+    margin: 2px;
 }
 
 input {
