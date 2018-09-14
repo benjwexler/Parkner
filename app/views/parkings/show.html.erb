@@ -52,10 +52,10 @@
   <% end %>
 </p>
 
-<button class="btn btn-info directionButton">
+<button class="btn btn-info buttonStyle">
 <a href = "https://www.google.com/maps/search/?api=1&query=<%= lat %>,<%= lng %>">Get Directions</a>
 </button>
-<button class="btn btn-info terminateButton">
+<button class="btn btn-info buttonStyle">
   <%= link_to 'End Parking Session', @parking, method: :delete, data: { confirm: 'Are you sure?' } %>
 </button>
 

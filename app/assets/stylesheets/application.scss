@@ -116,17 +116,14 @@
     border-radius: 15px;
 }
 
-.terminateButton, .directionButton {
+.buttonStyle {
     width: 70%;
     font-family: 'Roboto', sans-serif;
+    margin: 10px;
 
     a {
         color: white;
     }
-}
-
-.terminateButton {
-    margin: 10px;
 }
 
 input {
