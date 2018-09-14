@@ -1,11 +1,11 @@
 <body style="margin: 0 auto; background-color: #f8e83d;">
   <section style="margin: 0 auto; padding: 5px; height: auto; width: 80%; border-style: solid; border-color: #57d0ba; display: flex; flex-direction: column; align-items: center;">
   <h1 style="font-family: 'Fredoka One'; color: #395f8a;">Hi <%=@user.first_name%></h1>
-  <p style="font-family: 'Fredoka One'; color: #395f8a;">2 minutes from <%= @parking.created_at %>!</p>
   
   <% if @parking.move_by != nil %>
-    <p style="font-family: 'Fredoka One'; color: #395f8a;">You must move your car at <%=@parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P")%></p>    
-    <p style="font-family: 'Fredoka One'; color: #395f8a;">We will send you a reminder on <%=@parking.remind_at.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P")%></p>
+    <p style="font-family: 'Fredoka One'; color: #395f8a;">
+    Hey, just a friendly reminder that your car must be moved by <%=@parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P")%></p>    
+   
   <% end %>
   <img width="100%" src="https://maps.googleapis.com/maps/api/staticmap?center=<%= (@parking.start_lat.to_f + @parking.end_lat.to_f)/2  %>,<%= (@parking.start_long.to_f + @parking.end_long.to_f)/2 %>&zoom=15&scale=1&size=600x300&maptype=roadmap&format=png&visual_refresh=true&markers=color:red%7C40.695434,-73.929559&key=AIzaSyCIny_pi_-OpegLTAf2iV4ebra20U62ciM" alt="Your park location" style="margin-bottom: 5px;">
   <a href="https://www.google.com/maps/search/?api=1&query=<%= (@parking.start_lat.to_f + @parking.end_lat.to_f)/2  %>, <%= (@parking.start_long.to_f + @parking.end_long.to_f)/2 %>" style="text-decoration: none; font-family: 'Fredoka One'; color: #ffffff; background-color: #395f8a; border-radius: 15px; padding: 5px;">Get Directions</a>

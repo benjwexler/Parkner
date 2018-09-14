@@ -25,7 +25,7 @@ class EmailMailer < ApplicationMailer
     def deliverLater(user, parking)
         @user = user
         @parking = parking
-        mail(to: @user.email, subject: 'You will receive this 2 min after you parked!')
+        mail(to: @user.email, subject: 'Time to move your car!')
     end
 
 
