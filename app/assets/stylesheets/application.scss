@@ -98,6 +98,7 @@
 .buttonWidth {
     width: 100%;
     margin: 3px;
+    border-radius: 10px;
     font-family: 'Roboto', sans-serif;
 
     div {
@@ -110,7 +111,8 @@
     max-width: 90%;
     -webkit-appearance: none;
     font-family: 'Roboto', sans-serif;
-    margin: 2px;
+    margin: 3px;
+    border-radius: 15px;
 }
 
 input {
