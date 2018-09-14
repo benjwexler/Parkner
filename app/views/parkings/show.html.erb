@@ -2,7 +2,7 @@
 <% lng = (@parking.start_long.to_f + @parking.end_long.to_f)/2 %>
 
 
-<a href = "https://www.google.com/maps/search/?api=1&query=<%= lat %>,<%= lng %>">Get Directions</a>
+
 
 <p>
   <strong>Car:</strong>
@@ -48,7 +48,9 @@
     <span><%= %></span>
   <% end %>
 </p>
-
+<button class="btn btn-info directionButton">
+<a href = "https://www.google.com/maps/search/?api=1&query=<%= lat %>,<%= lng %>">Get Directions</a>
+</button>
 <button class="btn btn-info terminateButton">
   <%= link_to 'End Parking Session', @parking, method: :delete, data: { confirm: 'Are you sure?' } %>
 </button>
