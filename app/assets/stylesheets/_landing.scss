@@ -8,13 +8,20 @@ body{
 // background: white;
     font-family: 'Fredoka One', cursive;
     #landing-nav{
-        margin: 20px;
+        margin:   20px 50px;
         background-color: $aqua;
         color: $blue;
         
         span {
             font-family: 'Fredoka One', cursive;
             color: $blue;
+        }
+
+        #line {
+        color: red;    
+        border: none;
+        height: 10px;
+        background: #ccc;
         }
 
         .nav-logo{
@@ -44,6 +51,7 @@ body{
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         margin: 30px;
         height: 100%;
         border: solid 5px $aqua;
@@ -55,7 +63,7 @@ body{
                 font-size: 600%;
             }
             .b{
-                text-indent: 200px;
+                text-indent: 250px;
             }
 
             h2{
