@@ -11,19 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nickname %>
-    <%= form.text_field :nickname %>
-  </div>
+  <div class="infoTable">
+    <div class="infoRow">
+      <div class="infoCellLeft"> <%= form.label :nickname %> </div>
+      <div class="infoCellRight"> <%= form.text_field :nickname %> </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_field :description, :placeholder => "Optional" %>
-  </div>
+    <div class="infoRow">
+      <div class="infoCellLeft" <%= form.label :description %> </div>
+      <div class="infoCellRight"> <%= form.text_field :description, :placeholder => "Optional" %> </div>
+    </div>
 
-  <div class="field">
- 
-    <%= form.hidden_field :user_id, :value => current_user.id %>
+    <div class="infoRow">
+  
+      <%= form.hidden_field :user_id, :value => current_user.id %>
+    </div>
   </div>
 
   <div class="actions">

@@ -133,10 +133,27 @@ input {
     border: .5px solid $blue;   
 }
 
-label, input, select, option {
+label, input, select, option, .infoCellLeft, .infoCellRight {
     font-family: 'Roboto', sans-serif;
 }
 
 select {
     border: 0.5px solid #3F6188;
+}
+
+.infoTable {
+    display: table;
+    margin: 15px auto;
+
+    .infoRow {
+        display: table-row;
+
+        .infoCellLeft, .infoCellRight {
+            display: table-cell;
+            padding: 5px;
+            text-align: left;
+            font-weight: bold;
+
+        }
+    }
 }

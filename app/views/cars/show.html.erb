@@ -12,15 +12,17 @@
 <div id="carOutterWrapper"> 
 
 
-<p>
-  <strong>Description:</strong>
-  <%= @car.description %>
-</p>
+<div class="infoTable">
+  <div class="infoRow">
+    <div class="infoCellLeft"> Description:</div>
+    <div class="infoCellRight"> <%= @car.description %> </div>
+  </div>
+</div>
 
 
 
 <%= link_to 'Edit', edit_car_path(@car) %> |
-<%= link_to 'Destroy', @car, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Delete', @car, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', cars_path %>
 
 </div>

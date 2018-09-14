@@ -1,19 +1,25 @@
 <% lat = (@parking.start_lat.to_f + @parking.end_lat.to_f)/2 %>
 <% lng = (@parking.start_long.to_f + @parking.end_long.to_f)/2 %>
 
-<p>
-  <strong>Car:</strong>
-  <%= Car.find(@parking.car_id).nickname %>
-</p>
+<div class="infoTable">
 
-<p>
-  <strong>Move By:</strong>
-  <% if @parking.move_by  %>
-    <span><%= @parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %></span>
-  <% else %>
-    <span><%= %></span>
-  <% end %>
-</p>
+  <div class="infoRow">
+    <div class="infoCellLeft"> Car: </div>
+    <div class="infoCellRight"> <%= Car.find(@parking.car_id).nickname %> </div>
+  </div>
+
+  <div class="infoRow">
+    <div class="infoCellLeft"> Move By: </div>
+    <div class="infoCellRight"> 
+      <% if @parking.move_by  %>
+        <%= @parking.move_by.in_time_zone("Eastern Time (US & Canada)").strftime("%a %D %l:%M %P") %>
+      <% else %>
+        <%= %>
+      <% end %>
+    </div>
+  </div>
+
+</div>
 
 <p style="display:none">
   <strong>Start Lat:</strong>
