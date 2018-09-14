@@ -9,27 +9,28 @@
 
 <div id="carOutterWrapper"> 
 
-<p>
-  <strong>First name:</strong>
-  <span style="color:#3F6188"><%= @user.first_name %></span>
-</p>
+  <div class="infoTable">
+  <div class="infoRow">
+    <div class="infoCellLeft">First name:</div>
+    <div class="infoCellRight" style="color:#3F6188"><%= @user.first_name %></div>
+  </div>
 
-<p>
-  <strong>Last name:</strong>
-  <span style="color:#3F6188"><%= @user.last_name %></span>
-</p>
+  <div class="infoRow">
+    <div class="infoCellLeft">Last name:</div>
+    <div class="infoCellRight" style="color:#3F6188"><%= @user.last_name %></div>
+  </div>
 
-<p>
-  <strong>Phone number:</strong>
-  <span style="color:#3F6188"><%= @user.phone_number %></span>
-</p>
+  <div class="infoRow">
+    <div class="infoCellLeft">Phone:</div>
+    <div class="infoCellRight" style="color:#3F6188"><%= @user.phone_number %></div>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <span style="color:#3F6188"><%= @user.email %></span>
-</p>
+  <div class="infoRow">
+    <div class="infoCellLeft">Email:</div>
+    <div class="infoCellRight" style="color:#3F6188"><%= @user.email %></div>
+  </div>
 
-
+  </div>
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Delete Account', @user, method: :delete, data: { confirm: 'Are you sure?' } %> 
 
