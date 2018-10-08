@@ -17,7 +17,7 @@ A user can sign up for an account and store one or multiple cars and create park
 In order to install the app, you will need the latest version of Ruby installed onto your local machine. This app also uses a PostgreSQL object-relational database.
 
 ### Site Demo
-I encourage you to test out the site! You can either sign up and create your own account, or login to a demo account [here](http://www.rocky-journey-32777.herokuapp.com/) using the following credtials:
+I encourage you to test out the site! You can either sign up and create your own account, or login to a demo account [here](https://rocky-journey-32777.herokuapp.com/) using the following credtials:
 
 ```
 Email: demo@parkner.com
