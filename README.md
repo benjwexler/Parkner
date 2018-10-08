@@ -31,7 +31,7 @@ Password: password
 
 Currently, the location services used only pulls data for New York City and California. While the rest of the app will still function, you will only be able to view the map if you are physically located in those two areas.
 
-## Built With
+## Built With:
 - [Geolocation](https://developer.mozilla.org/en-US/docs/Web/API/Geolocation_API) - HTML API used to grab user's current location
 - [Coord](https://coord.co/docs/searchcurbs) - modern RESTful API used to collect parking regulations data
 - [Geocodio](https://www.geocod.io/) - parses latitude and longitude coordinates into address stings
@@ -41,7 +41,7 @@ Currently, the location services used only pulls data for New York City and Cali
 - [Bootstrap](https://github.com/twbs/bootstrap-rubygem) - front-end framework for styling
 - [PostgreSQL](https://www.postgresql.org/) - relational database structure
 
-## Authors
+## Developed By:
 - [**Lillian Ngo**](https://github.com/ngolilli94) - **Project Lead** - Database structure, design, and user flow
 - [**Jazmine Chung**](https://github.com/chungzilla) - **Team Member** - Authentication/data integrity, design, database structure, and user flow
 - [**Jorge Navarro**](https://github.com/Jnavarr56) - **Team Member** - JavaScript GPS algorithm, ActiveJob email system, design, and user flow
