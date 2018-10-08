@@ -43,6 +43,6 @@ Currently, the location services used only pulls data for New York City and Cali
 
 ## Developed By:
 - [**Lillian Ngo**](https://github.com/ngolilli94) - **Project Lead** - Database structure, design, and user flow
-- [**Jazmine Chung**](https://github.com/chungzilla) - **Team Member** - Authentication/data integrity, design, database structure, and user flow
+- [**Jazmine Chung**](https://github.com/chungzilla) - **Team Member** - Authentication/data integrity, design, database structure, README, and user flow
 - [**Jorge Navarro**](https://github.com/Jnavarr56) - **Team Member** - JavaScript GPS algorithm, ActiveJob email system, design, and user flow
 - [**Ben Wexler**](https://github.com/benjwexler) - **Team Member** - Database design, Routing, Mobile responsiveness, ActiveJob email system, design, and user flow
