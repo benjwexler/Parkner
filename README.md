@@ -2,7 +2,7 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com) 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 
-Parkner is an app that will remind a user when to move their car in order to avoid getting a ticket.
+Parkner is a mobile web app that will remind a user when to move their car in order to avoid getting a ticket.
 
 ## How Does It Work
 <img src="https://media.giphy.com/media/k6NCuY77bCFU6ZQTZF/giphy.gif">
